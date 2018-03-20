@@ -65,7 +65,10 @@ background-color:#333;
 .alert{
 text-shadow:0px 0px 0px #fff;
 }
-
+.borderyok{
+border:none;
+padding:0 !important;
+}
 	</style>
 <?php
    
@@ -138,7 +141,8 @@ text-shadow:0px 0px 0px #fff;
 		<div class="col-md-6">
 			<label for="metin">Metin:</label>
 			
-            <textarea class="form-control border-success"  onkeyup="decode()" rows="6" id="sifresizmetin"></textarea>
+           
+            <div class="dsifreli-metin metin-alani border-success" id="sifresizmetin"></div>
            
 		</div>
 	</div>
@@ -169,8 +173,8 @@ function exchange()
     var sifrelimetin = $( "#sifrelimetin" ).text();	
 	//alert(sifrelimetin);
 	$("#d_metin").val(sifrelimetin);
-decode();
-//$(".dsifreli-metin").html('<center><button onclick="decode()" class="yenile2 btn btn-primary"><i class="fa fa-refresh"></i></button></center>');
+
+$(".dsifreli-metin").html('<center><button onclick="decode()" class="yenile2 btn btn-primary"><i class="fa fa-refresh"></i></button></center>');
 }
 
 
@@ -182,7 +186,7 @@ $.ajax({url: "random.php", success: function(result){
 $(".esifreli-metin").html('<center><button onclick="encode()" class="yenile1 btn btn-primary"><i class="fa fa-refresh"></i></button></center>');
 	$(".dsifreli-metin").html('<center><button onclick="decode()" class="yenile2 btn btn-primary"><i class="fa fa-refresh"></i></button></center>');
     }});
-decode();
+
 
 }
 
@@ -223,7 +227,7 @@ function encode()
 
 function decode()
 	{
-		$("#sifresizmetin").val('bekleyin...');
+		$(".dsifreli-metin").html('<div class="loading"><img src="assets/img/5.gif"></div>');
 		$(".yenile1").attr("disabled",true);
 
 		delay(function(){
@@ -234,8 +238,8 @@ function decode()
 		        dmetin: $("#d_metin").val()
 		    },
 		    function(data, status){
-		      $("#sifresizmetin").val(data);
-		      //$(".yenile1").attr("disabled",false);
+		      $(".dsifreli-metin").html(data);
+		      $(".yenile1").attr("disabled",false);
 		    });
 
 		}, 1000 );
