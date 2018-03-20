@@ -137,8 +137,9 @@ text-shadow:0px 0px 0px #fff;
 		</div>
 		<div class="col-md-6">
 			<label for="metin">Metin:</label>
-				
+			
             <textarea class="form-control border-success"  onkeyup="decode()" rows="6" id="sifresizmetin"></textarea>
+           
 		</div>
 	</div>
 
@@ -181,6 +182,7 @@ $.ajax({url: "random.php", success: function(result){
 $(".esifreli-metin").html('<center><button onclick="encode()" class="yenile1 btn btn-primary"><i class="fa fa-refresh"></i></button></center>');
 	$(".dsifreli-metin").html('<center><button onclick="decode()" class="yenile2 btn btn-primary"><i class="fa fa-refresh"></i></button></center>');
     }});
+decode();
 
 }
 
@@ -188,6 +190,8 @@ function sifre()
 {
 	$(".esifreli-metin").html('<center><button onclick="encode()" class="yenile1 btn btn-primary"><i class="fa fa-refresh"></i></button></center>');
 	$(".dsifreli-metin").html('<center><button onclick="decode()" class="yenile2 btn btn-primary"><i class="fa fa-refresh"></i></button></center>');
+	
+
 }
 
 function encode()
@@ -207,15 +211,19 @@ function encode()
 		    function(data, status){
 		       $(".esifreli-metin").html(data);
 		       $(".yenile2").attr("disabled",false);
+            	
 		    });
+        
 
 	    }, 1000 );
+
+
 
 	}
 
 function decode()
 	{
-		//$(".dsifreli-metin").html('<div class="loading"><img src="assets/img/5.gif"></div>');
+		$("#sifresizmetin").val('bekleyin...');
 		$(".yenile1").attr("disabled",true);
 
 		delay(function(){
