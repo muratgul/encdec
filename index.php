@@ -105,7 +105,9 @@ text-shadow:0px 0px 0px #fff;
         
 	<div class="alert alert-danger" role="danger">
  		<button class="btn btn-danger btn-sm" data-clipboard-target="#sifrelimetin" onclick="alert('Şifreli metin kopyalandı')">Copy</button>  Şifrele
-	</div>
+	</div>   
+        
+        
 	<div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
@@ -120,7 +122,9 @@ text-shadow:0px 0px 0px #fff;
             
 		</div>
 	</div>
-	<div class="mt-2"></div>
+            <div class="mt-1"></div>
+            <center><button class="btn btn-success btn-sm" onclick="exchange()"><i class="fa fa-exchange"></i></button></center><br>
+	<div class="mt-1"></div>
 	<div class="alert alert-success" role="success">
  		 <button class="btn btn-success btn-sm" data-clipboard-target="#sifresizmetin" onclick="alert('Şifresiz metin kopyalandı')">Copy</button>  Şifreyi Çöz
 	</div>
@@ -128,7 +132,7 @@ text-shadow:0px 0px 0px #fff;
 		<div class="col-md-6">
 			<div class="form-group">
 				<label for="metin">Şifrelenmiş Metin:</label>
-				<textarea class="form-control" id="d_metin" onkeyup="decode()" rows="6"></textarea>
+				<textarea class="form-control" id="d_metin" onkeyup="decode()" rows="6" ></textarea>
 			</div>
 		</div>
 		<div class="col-md-6">
@@ -157,6 +161,14 @@ var delay = (function(){
     timer = setTimeout(callback, ms);
   };
 })();
+
+function exchange()
+{
+    var sifrelimetin = $( "#sifrelimetin" ).text();	
+	//alert(sifrelimetin);
+	$("#d_metin").val(sifrelimetin);
+$(".dsifreli-metin").html('<center><button onclick="decode()" class="yenile2 btn btn-primary"><i class="fa fa-refresh"></i></button></center>');
+}
 
 
 function generate()
