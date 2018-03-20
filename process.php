@@ -52,7 +52,7 @@ function decrypt( $key, $ciphertext, $meta = '' ) {
 		
 
 		if($_POST['islem']=='decode'){
-			$metin2 = decrypt($_POST['sifre'],$_POST['dmetin']);
+			$metin2 = '<textarea class="form-control borderyok"  rows="6">'.decrypt($_POST['sifre'],$_POST['dmetin']).'</textarea>';
 			echo $metin2;
 		}
 		
