@@ -112,18 +112,18 @@ text-shadow:0px 0px 0px #fff;
 		<div class="col-md-6">
 			<div class="form-group">
 				<label for="metin">Metin:</label>
-				<textarea class="form-control" id="e_metin" onkeyup="encode()" rows="6"></textarea>
+				<textarea class="form-control border-danger" id="e_metin" onkeyup="encode()" rows="6"></textarea>
 			</div>
 		</div>
 		<div class="col-md-6">
 			<label for="metin">Şifrelenmiş Metin:</label>
-			<div class="esifreli-metin metin-alani" id="sifrelimetin"></div><br>
+			<div class="esifreli-metin metin-alani border-danger" id="sifrelimetin"></div><br>
             
             
 		</div>
 	</div>
             <div class="mt-1"></div>
-            <center><button class="btn btn-success btn-sm" onclick="exchange()"><i class="fa fa-exchange"></i></button></center><br>
+            <center><button class="btn btn-info btn-sm" onclick="exchange()"><i class="fa fa-exchange"></i> Doğrula</button></center><br>
 	<div class="mt-1"></div>
 	<div class="alert alert-success" role="success">
  		 <button class="btn btn-success btn-sm" data-clipboard-target="#sifresizmetin" onclick="alert('Şifresiz metin kopyalandı')">Copy</button>  Şifreyi Çöz
@@ -132,12 +132,12 @@ text-shadow:0px 0px 0px #fff;
 		<div class="col-md-6">
 			<div class="form-group">
 				<label for="metin">Şifrelenmiş Metin:</label>
-				<textarea class="form-control" id="d_metin" onkeyup="decode()" rows="6" ></textarea>
+				<textarea class="form-control border-success" id="d_metin" onkeyup="decode()" rows="6" ></textarea>
 			</div>
 		</div>
 		<div class="col-md-6">
 			<label for="metin">Metin:</label>
-				<div class="dsifreli-metin metin-alani" id="sifresizmetin"></div>
+				<div class="dsifreli-metin metin-alani border-success" id="sifresizmetin"></div>
 		</div>
 	</div>
 
@@ -167,7 +167,8 @@ function exchange()
     var sifrelimetin = $( "#sifrelimetin" ).text();	
 	//alert(sifrelimetin);
 	$("#d_metin").val(sifrelimetin);
-$(".dsifreli-metin").html('<center><button onclick="decode()" class="yenile2 btn btn-primary"><i class="fa fa-refresh"></i></button></center>');
+decode();
+//$(".dsifreli-metin").html('<center><button onclick="decode()" class="yenile2 btn btn-primary"><i class="fa fa-refresh"></i></button></center>');
 }
 
 
