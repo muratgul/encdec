@@ -47,7 +47,6 @@ function decrypt( $key, $ciphertext, $meta = '' ) {
 
 		if($_POST['islem']=='encode'){
 			$metin = encrypt($_POST['sifre'],$_POST['emetin']);
-
 			echo $metin;
 		}
 		
