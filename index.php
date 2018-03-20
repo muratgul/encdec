@@ -137,7 +137,8 @@ text-shadow:0px 0px 0px #fff;
 		</div>
 		<div class="col-md-6">
 			<label for="metin">Metin:</label>
-				<div class="dsifreli-metin metin-alani border-success" id="sifresizmetin"></div>
+				
+            <textarea class="form-control border-success"  onkeyup="decode()" rows="6" id="sifresizmetin"></textarea>
 		</div>
 	</div>
 
@@ -214,7 +215,7 @@ function encode()
 
 function decode()
 	{
-		$(".dsifreli-metin").html('<div class="loading"><img src="assets/img/5.gif"></div>');
+		//$(".dsifreli-metin").html('<div class="loading"><img src="assets/img/5.gif"></div>');
 		$(".yenile1").attr("disabled",true);
 
 		delay(function(){
@@ -225,8 +226,8 @@ function decode()
 		        dmetin: $("#d_metin").val()
 		    },
 		    function(data, status){
-		      $(".dsifreli-metin").html(data);
-		      $(".yenile1").attr("disabled",false);
+		      $("#sifresizmetin").val(data);
+		      //$(".yenile1").attr("disabled",false);
 		    });
 
 		}, 1000 );
