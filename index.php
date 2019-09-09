@@ -84,7 +84,7 @@ padding:0 !important;
 }
     
     ?>
-	
+
 <div class="gizli"><img src="assets/img/5.gif"></div>
 <div class="mt-2"></div>
 <div class="container">
@@ -93,10 +93,11 @@ padding:0 !important;
 		<h1>ENCODE - DECODE</h1>
 	</div>
     
-    
+    <p>Özel anahtar sayesinde yazdığınız metni şifreler. Şifreli metin sadece belirlenen özel anahtar ile çözülebilir. Özel anahtar rastgele belirlenebileceği gibi özel tanımlı da olabilir. Özel anahtarı unutursanız şifreli metni bir daha çözemezsiniz!</p>	
+	<p><a class="btn btn-primary" href="https://github.com/muratgul/encdec"> Github </a></p>
 
 	
-		<label for="metin">Özel Anahtar: (Bu anahtarı kaybetmeyiniz) </label>
+		<label for="metin" >Özel Anahtar: (Bu anahtarı kaybetmeyiniz) </label>
 
         
         <div class="input-group mb-3">
@@ -107,7 +108,7 @@ padding:0 !important;
 	</div>
         
 	<div class="alert alert-danger" role="danger">
- 		<button class="btn btn-danger btn-sm" data-clipboard-target="#sifrelimetin" onclick="alert('Şifreli metin kopyalandı')">Copy</button>  Şifrele
+ 		<button class="btn btn-danger btn-sm float-right" data-clipboard-target="#sifrelimetin" onclick="alert('Şifreli metin kopyalandı')"><i class="fa fa-copy"></i> Kopyala</button>  Şifrele
 	</div>   
         
         
@@ -129,7 +130,7 @@ padding:0 !important;
             <center><button class="btn btn-info btn-sm" onclick="exchange()"><i class="fa fa-exchange"></i> Doğrula</button></center><br>
 	<div class="mt-1"></div>
 	<div class="alert alert-success" role="success">
- 		 <button class="btn btn-success btn-sm" data-clipboard-target="#sifresizmetin" onclick="alert('Şifresiz metin kopyalandı')">Copy</button>  Şifreyi Çöz
+ 		 <button class="btn btn-success btn-sm float-right"  data-clipboard-target="#sifresizmetin" onclick="alert('Şifresiz metin kopyalandı')"><i class="fa fa-copy"></i> Kopyala</button>  Şifreyi Çöz
 	</div>
 	<div class="row">
 		<div class="col-md-6">
